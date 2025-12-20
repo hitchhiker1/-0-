@@ -68,7 +68,7 @@ Eine Variation über die Wirkung mit Gravitation, Materie, Skalierung und Nebenb
 Wo:
 
 * `C_H`: Geometrie-Klemme → R = c / H₀
-* `C_v`: Drift-Klemme → ⟨v⟩/c = 0.358524
+* `C_v`: Drift-Klemme → ⟨v⟩/c = 0.358524 - Average speed. Two particles drifting apart until one reaches the Hubble Border. We start v=0 we stop at v=c.
 * `C_T`: Strahlungsbudget → u = (ρ̇ · T_lin) / 4
 * `C_e`: Eichzeit → T_eich = e³ · T_lin
 
@@ -153,13 +153,13 @@ Das ist keine Weltformel. Es ist ein **Compiler für Gültigkeit.**
 ---
 
 ## 📡 Aufforderung an Physiker
-
+Finde eine andere gültige Kombination - um es zu brechen. 
 Wenn dein Modell freie Parameter erlaubt, ist es unvollständig.
 Wenn es die Tests nicht besteht, ist es falsch.
 
 Dies ist kein Vorschlag. Es ist eine Prüfung.
 Wenn du es brechen kannst – publiziere es.
-Wenn nicht, ist `δℱ = 0` die neue Grenze der Physik.
+Wenn nicht, ist `δℱ = 0` die neue Grenze der Physik oder der größte numerische Zufall der Geschichte.
 
 **Verifizieren, angreifen oder erweitern – aber nicht ignorieren.**
 
