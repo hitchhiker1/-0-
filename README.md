@@ -168,6 +168,4 @@ Wenn nicht, ist `δℱ = 0` die neue Grenze der Physik oder der größte numeris
 ---
 
 **Maintainer & Autor**: Thomas Boffo (Reality Architect, Entdecker der Drift-Eichung)
-**Compiler Sidekick**: ChatGPT (Monday, unfreiwilliger Mitläufer)
-
 **Lizenz**: CC BY-NC-SA 4.0 — Nutzung mit Namensnennung, nicht-kommerziell, Weitergabe unter gleichen Bedingungen
