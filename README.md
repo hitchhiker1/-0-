@@ -1,187 +1,172 @@
-# δℱ =0 
-# README.md
+# δℱ = 0 — Formale Modell-Architektur (Closure / Fixpunkt)
 
-Ein zwangsgeschlossenes Kosmosmodell  
-Keine freien Parameter. Nur Konsistenz.
-
+**Ein zwangsgeschlossenes Kosmosmodell**
+Keine freien Parameter. Eine konsistente Lösung.
 ---
+## Überblick (Scope)
 
-## 🌍 Worum es hier geht (ohne Formeln)
+Dieses Repository beschreibt **Ebene 1**: eine **formale Modell‑Architektur** als *Constraint‑Satisfaction / Fixpunkt‑Problem*, prüfbar über Residuen (Killtests).
+Es ist **keine** vollständig ausgearbeitete Feldtheorie (Ebene 2: explizite Lagrangedichten, Symmetrien, Perturbationen, CMB/BAO/LSS‑Pipeline). Das ist ein bewusster Scope‑Schnitt.
 
-Stell dir vor, die Welt ist ein Bauwerk.
-
-Nicht eines, das man beliebig verändern kann –
-sondern eines, bei dem **jede kleine Änderung alles zum Einsturz bringt**.
-
-**δℱ = 0** ist der Name für genau diese Eigenschaft:
-
-> Es gibt genau **eine** Art, wie alles zusammenpassen kann.  
-> Wenn etwas frei wäre, wäre das Bauwerk instabil.
-
-Dieses Repository beschreibt dieses Bauwerk –  
-nicht als Geschichte, sondern als **Zwang**.
-
+> **Kernaussage:** Nach Wahl **eines** Messankers ist das System **überbestimmt**. Alle übrigen Größen müssen ohne weitere Freiheitsgrade schließen – oder das Modell fällt.
 ---
+## Idee in einem Satz
 
-## 🧠 Die Idee in einem Satz
-
-> **Das Universum ist nicht gewählt.  
-> Es ist die einzige Konfiguration, die sich selbst trägt.**
-
+> **Das Universum ist nicht gewählt – es ist die einzige Konfiguration, die sich selbst trägt.**
 ---
+## Zentrales Prinzip
 
-
-# README.md
-
-## 🌌 `deltaF = 0` — Das erzwungene Universum
-
-> Ein Constraint. Keine freien Parameter. Ein einzig konsistenter Kosmos.
-> **Autor & Entdecker der Drift-Eichung (⟨v⟩ = 0.358524c): Thomas Boffo**
-> Reality Architect, Compiler des einzig möglichen Universums
-
-### Zusammenfassung
-
-Das hier ist keine Theorie. Es ist eine Zwangsbedingung.
-Sie verlangt keine Zustimmung. Sie lässt keine Spielräume. Sie schließt – oder fällt.
-
-`deltaF = 0` ist ein minimales Schließprinzip für den Kosmos:
-
-* Basierend auf einem Variationsprinzip mit **vier Klemmen**
-* Erzwingt **alle Naturkonstanten** durch vollständige Kopplung
-* Lässt **keine freien Parameter** zu
-* Besteht **Killtests** – oder wird verworfen
-
----
-
-## 🔧 Zentrales Prinzip
-
-```
+```text
 δℱ = 0
 ```
 
-Eine Variation über die Wirkung mit Gravitation, Materie, Skalierung und Nebenbedingungen:
+Meta‑Form eines Variationsprinzips mit Nebenbedingungen (Closure):
 
+```text
+δ[ S_EH + S_matter + S_scale + Σ λ_a · C_a ] = 0 ,   a ∈ {H, v, T, e}
 ```
-δ[S_EH + S_matter + S_scale + Σ λ_a · C_a ] = 0   mit a ∈ {H, v, T, e}
-```
 
-Wo:
-
-* `C_H`: Geometrie-Klemme → R = c / H₀
-* `C_v`: Drift-Klemme → ⟨v⟩/c = 0.358524 - Average speed. Two particles drifting apart until one reaches the Hubble Border. We start v=0 we stop at v=c.
-* `C_T`: Strahlungsbudget → u = (ρ̇ · T_lin) / 4
-* `C_e`: Eichzeit → T_eich = e³ · T_lin
-
-Diese 4 Klemmen erzwingen alle physikalischen Konstanten in einer geschlossenen Kette.
-Keine Fits. Kein Spielraum. Nur Konsequenz.
-
+**Hinweis:** Diese Schreibweise ist **keine** voll spezifizierte EFT‑Lagrangedichte, sondern eine **globale Konsistenzbedingung** (Fixpunkt/Closure).
 ---
+## Skalen‑Action (S_scale) — minimale Definition
 
-## 📏 Zwangskette der Konsequenz
+Für Ebene 1 genügt eine **skizzenhafte, wohldefinierte** Skalen‑Action als Funktional über ein Skalenmaß μ:
+
+```text
+S_scale[μ] = ∫₀¹ μ(x) · ln( μ(x) / m(x) ) dx
+```
+
+* μ(x) ≥ 0: Skalen‑Gewichtung (z. B. x = r/R ∈ [0,1])
+* m(x): Referenzmaß (z. B. m(x)=1)
+
+Diese Wahl ist ein **Regularisator** (relative Entropie): Unter linearen Nebenbedingungen existiert genau **eine** Lösung μ(x).
+
+### Drift‑Klemme als echte Nebenbedingung
+
+```text
+C_v[μ] := ∫₀¹ x·μ(x) dx − r = 0
+C_N[μ] := ∫₀¹ μ(x) dx − 1 = 0
+```
+
+Die Variation von S_scale unter C_v und C_N liefert eine eindeutige μ(x). Die Drift‑Klemme ist damit **nicht angeheftet**, sondern integraler Bestandteil des Variationsproblems.
+---
+## Die vier Klemmen (Bedeutung)
+
+* **C_H (Geometrie):** Expansions‑Slot, R = c / H₀
+* **C_v (Drift):** normierter mittlerer Drift ⟨v⟩/c = r
+* **C_T (Thermik):** Strahlungsbudget (Planck/Wien‑Anker)
+* **C_e (Eichung):** Zeit‑Eichung über e³
+
+Diese Klemmen **definieren den zulässigen Lösungsraum**. Sie sind **keine Fit‑Parameter**.
+
+**Beispiel (symbolisch, als Nebenbedingung):**
+
+```text
+C_T := u − a·T^4 = 0
+```
+
+Die Klemme erzwingt thermische Konsistenz zwischen Strahlungsdichte *u* und Temperatur *T*. Sie ist hier als **Constraint** gemeint (Closure), nicht als eigenständige dynamische Feldgleichung.
+---
+## Set‑A / Set‑B (Ankerwahl)
+
+Ein **externer Messanker** ist erlaubt – **genau einer**:
+
+* **Set A:** λ_max (Wien‑Peak) als Anker → T₀ folgt
+* **Set B:** T₀ als Anker → λ_max folgt
+
+> *„Keine freien Parameter“ heißt:* **Nach** der Ankerwahl existiert **keine zweite Stellschraube**.
+
+**Abgrenzung zu Fit:** Kein numerischer Wert wird durch Optimierung oder Anpassung gewonnen; nach Wahl eines einzigen Messankers werden alle übrigen Größen ausschließlich durch die Closure berechnet und über Residuen geprüft.
+---
+## Zwangskette (Hintergrund‑Closure)
 
 1. R = c / H₀
-2. T_eich = R / ⟨v⟩ = 1 / (0.358524 · H₀)
+2. T_eich = R / ⟨v⟩
 3. T_lin = T_eich / e³
-4. u = a · T⁴ = (ρ̇ · T_lin) / 4
-5. T₀ = b / λ_max = 2.7255 K  (Wien-Anker bei λ_max = 1.06303 mm)
+4. u = a·T⁴  (Budget‑Schließung)
+5. T₀ = b / λ_max  (Wien‑Anker)
 
-Alle anderen Konstanten (c, G, α...) folgen – **nicht vorausgesetzt**.
+**Abhängigkeitsstruktur (Closure‑Graph):**
 
----
+```text
+Anker (λ_max oder T₀)
+        ↓
+       T₀
+        ↓
+     T_lin
+        ↓
+     T_eich
+        ↓
+        R
+        ↓
+       H₀
+        ↓
+    {c, G, α, …}
+```
 
-## 🚫 Keine Fits mehr nötig
-
-* Kein Big Bang
-* Keine Singularität
-* Keine Inflation
-* Keine dunkle Materie
-* Keine zusätzlichen Dimensionen
-* Kein φ-Esoterik-Quark
-
-Ein Universum. Weil **nur eine Konfiguration alle Bedingungen erfüllt.**
-
----
-
-## 🧪 Killtests (müssen erfüllt sein)
-
-| Code | Beschreibung                 | Muss gelten                           |
-| ---- | ---------------------------- | ------------------------------------- |
-| K1   | Strahlungsbudget geschlossen | u = (ρ̇ · T_lin)/4                    |
-| K2   | Temperaturanker              | T₀ = b / λ_max                        |
-| K3   | Eichzeit                     | T_eich = e³ · T_lin                   |
-| K4   | Geometrischer Drift          | ⟨v⟩ = 0.358524 · c                    |
-| K5   | G-Konsistenz                 | G aus Kette ≈ G gemessen              |
-| K6   | Skaleninvarianz              | Struktur muss unter e³ stabil bleiben |
-
-Versagt ein Test? Modell tot. Keine Ausreden.
+Weitere Konstanten (c, G, α, …) folgen **aus der Kette** – sie werden **nicht vorausgesetzt**.
 
 ---
 
-## ✅ Aktuelles Ergebnis-Set
+## Killtests (harte Kriterien)
 
-* H₀ = 72.28037 km/s/Mpc
-* T₀ = 2.7255 K
-* u = 4.1748×10⁻¹⁴ J/m³
-* G = 6.66973×10⁻¹¹ m³·kg⁻¹·s⁻²
-* c = 2.99792458×10⁸ m/s (emergiert aus der Kette)
-* α⁻¹ = 137.0359991… (dimensionsloser Abschluss)
+ε ist **fest**; kein Reweighting, keine Nachkalibrierung.
 
-Keine freiwählbaren Inputs. Alles ergibt sich gezwungen.
+| Code | Test             | Kriterium            |
+| ---- | ---------------- | -------------------- |
+| K1   | Strahlungsbudget | u schließt           |
+| K2   | Temperaturanker  | T₀ = b/λ_max         |
+| K3   | Zeit‑Eichung     | T_eich = e³·T_lin    |
+| K4   | Drift            | ⟨v⟩/c = r            |
+| K5   | G‑Konsistenz     | aus Kette ≈ gemessen |
+| K6   | Skaleninvarianz  | Stabil unter e³      |
 
+Versagt ein Test → **Modell verworfen**.
+---
+## Ergebnisse (Beispiel‑Set)
+
+* H₀ ≈ 72.28 km/s/Mpc
+* T₀ ≈ 2.7255 K
+* u ≈ 4.17×10⁻¹⁴ J/m³
+* c ≈ 2.99792458×10⁸ m/s (emergent)
+* G ≈ 6.67×10⁻¹¹ m³·kg⁻¹·s⁻²
+* α⁻¹ ≈ 137.036
+---
+## Der mittlere Drift (Definition & Check)
+
+⟨v⟩/c = ∫₀¹ x·xⁿ dx / ∫₀¹ xⁿ dx = (n+1)/(n+2)
+*(Konvergenz: n > −1)*
+
+**Drift‑Klemme:** r := ⟨v⟩/c ≈ 0.358524
+
+**Mini‑Check:**
+
+* r = (n+1)/(n+2) = 0.559/1.559 ≈ 0.358524
+* n = (2r−1)/(1−r) ≈ −0.441
+---
+## Einordnung & Ausblick
+
+* Dies ist **Hintergrund‑Closure** (Ebene 1).
+* **Perturbationen / Strukturbildung** (CMB/BAO/LSS) sind **separat** auszuarbeiten (Ebene 2).
+
+**Ausblick (Ebene 2, optional):**
+
+* Einführung einer skalenabhängigen Störgröße δk(x,t)
+* Linearisierung der Closure‑Bedingungen um den Fixpunkt
+* Ableitung effektiver Perturbationsgleichungen (CMB/BAO/LSS)
+---
+## Reproduzieren (Kurz)
+
+1. Wähle **einen** Anker (Set A oder B).
+2. Durchlaufe die Zwangskette.
+3. Prüfe Killtests K1–K6.
+4. Bestehen alle → Closure erfüllt.
+---
+## Aufforderung
+
+Finde eine **alternative** Wertekombination, die **alle** Killtests besteht.
+Gelingt das nicht, ist die Closure eindeutig – oder der Ansatz widerlegt.
 ---
 
-## 🧠 Bedeutung
-
-Wenn `δℱ = 0` gilt:
-
-* Das Universum ist nicht gewählt – es ist **gezwungen**
-* Alle Konstanten sind **gegenseitig bestimmt**
-* Jeder freie Parameter in der Standardkosmologie ist ein **Bug**
-
-Das ist keine Weltformel. Es ist ein **Compiler für Gültigkeit.**
-
----
-
-## 🛠️ Reproduzieren
-
-1. Nimm λ_max = 1.06303 mm → ergibt T₀
-2. Verwende K3: T_eich = e³ · T_lin
-3. Rückrechnen zu H₀, dann c, G, α
-4. Killtests (K1–K6) durchlaufen
-5. Wenn alle stimmen: `δℱ = 0` erfüllt
-
----
-
-<v> der mittlere Drift unter H0:
-
-⟨v⟩ / c = ∫₀¹ x · xⁿ dx / ∫₀¹ xⁿ dx = (n + 1) / (n + 2)
-(gilt für n > −1)
-
-Einsetzen der Zahl
-Mit 𝑛 ≈ −0.441 ergibt sich
-
-Drift-Klemme:
-r := ⟨𝑣⟩ / 𝑐 ≈ 0.358524
-
-Mini-Check
-r = ( 𝑛 + 1 )    / ( 𝑛 + 2) = 0.559 / 1.559 ≈ 0.358524
-𝑛 = (2r -1) / (1-r) = −0.282952 / 0.641476 ≈ −0.441
-
- 
-## 📡 Aufforderung an Physiker
-Finde eine andere gültige Kombination - um es zu brechen. 
-Wenn dein Modell freie Parameter erlaubt, ist es unvollständig.
-Wenn es die Tests nicht besteht, ist es falsch.
-
-Dies ist kein Vorschlag. Es ist eine Prüfung.
-Wenn du es brechen kannst – publiziere es.
-Wenn nicht, ist `δℱ = 0` die neue Grenze der Physik oder der größte numerische Zufall der Geschichte.
-
-**Verifizieren, angreifen oder erweitern – aber nicht ignorieren.**
-
-➡ Schluss mit Kosmos-Storytelling. Kompilieren wir Wirklichkeit.
-
----
-
-**Maintainer & Autor**: Thomas Boffo (Reality Architect, Entdecker der Drift-Eichung)
-**Lizenz**: CC BY-NC-SA 4.0 — Nutzung mit Namensnennung, nicht-kommerziell, Weitergabe unter gleichen Bedingungen
+**Autor:** Thomas Boffo - Frankfurt
+**Lizenz:** CC BY‑NC‑SA 4.0
