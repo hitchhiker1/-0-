@@ -215,6 +215,8 @@ R = c / H₀
 
 **Hinweis zur Fixpunkt‑Struktur (kein „Zirkel“):** Die Gleichungen bilden einen **gleichzeitigen Closure‑Graphen** (Fixpunkt), keinen sequentiellen Rechenpfad. Ein „Zirkel“ entsteht nur, wenn man Ebene 1 fälschlich als Algorithmus liest. Numerische Werte sind nur dann zulässig, wenn **alle** Klemmen und Residuen **gleichzeitig** geschlossen werden (z.B. per reproduzierbarem Code).
 
+Abgeleitete Fixpunkt-Identität (informativ, keine zusätzliche Klemme):
+e³ · r · H₀ · τ_lin = 1
 ---
 
 ## Killtests (Residuen fest; ε global; kein Trade‑off)
